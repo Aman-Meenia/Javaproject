@@ -29,6 +29,32 @@ cout<<"Enter the left for "<<temp<<endl;
     return n ;
 }
 
+//  LEVEL ORDER TRAVERSAL 
+
+void Level_Order_Traversal(node * root){
+	if(root==NULL){
+	return ;
+	}
+	queue<node *> q;
+	q.push(root);
+
+while(!q.empty()){
+node * n = q.front();
+q.pop();
+cout<<n->data<<" ";
+if(n->left){
+	q.push(n->left);
+}
+if(n->right){
+	q.push(n->right);
+}
+
+}cout<<endl;
+
+
+}
+
+//  INORDER TRAVERSAL
 void Inorder(node * root){
     if(root==NULL) return ;
     Inorder(root->left);
